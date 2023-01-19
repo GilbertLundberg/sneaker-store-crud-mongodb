@@ -8,7 +8,7 @@
             IDAO productDAO; 
 
             io = new TextIO(); 
-            productDAO = new MongoDAO("", "SneakerStore");
+            productDAO = new MongoDAO(File.ReadAllText($"connectionstring.txt"), "SneakerStore");
 
             InventoryController controller = new InventoryController(io, productDAO); 
             controller.Start(); 
